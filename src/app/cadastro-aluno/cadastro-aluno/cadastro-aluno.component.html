@@ -1,0 +1,116 @@
+<form #f="ngForm" autocomplete="off" (ngSubmit)="salvar(f)">
+<h1 class="page-title">
+    <i class="icon-user"></i>
+ <span style="margin-left:5px"> Controle de Alunos </span>
+  <small></small>
+</h1>
+
+
+<div class="row">
+
+  <div class="col-lg-12 col-xs-6 col-sm-3">
+    <div class="portlet light ">
+      <div class="portlet-title">
+        <div class="caption">
+          <span class="caption-subject bold uppercase font-dark">
+            {{ editando ? 'Editar ' : 'Novo' }} Aluno</span>
+          <span class="caption-helper">{{ editando ? 'Altere as informações necessárias... ' : 'Insira os dados corretamente...' }}</span>
+        </div>
+        <div class="actions">
+          <button type="submit" class="btn btn-circle green btn-outline btn-sm">
+
+              <i class="fa fa-plus"></i> Salvar
+
+          </button>
+
+
+          <a class="btn btn-circle btn-icon-only btn-default" routerLink="/alunos">
+            <i class="icon-magnifier"></i>
+          </a>
+
+          <a class="btn btn-circle btn-icon-only btn-default fullscreen" href="#"> </a>
+        </div>
+      </div>
+      <div class="portlet-body">
+        <div class="row">
+
+
+            <p-card>
+
+                <div class="ui-g">
+
+                  <div class="ui-g-12">
+                    <div class="ui-g-6 ui-fluid">
+
+
+                        <div class="form-group form-md-line-input form-md-floating-label ui-float-label">
+                            <input type="text" class="form-control" id="form_control_1"
+                            [(ngModel)]="aluno.nome" name="nome" ngModel>
+                            <label for="float-input" style="margin-top:-17px">Nome</label>
+                            <span class="help-block">Some help goes here...</span>
+                        </div>
+
+
+                        <div class="form-group form-md-line-input form-md-floating-label ui-float-label">
+                            <input type="text" class="form-control" id="form_control_1" required minlength="5"
+                            [(ngModel)]="aluno.endereco" name="endereco" ngModel>
+                            <label for="float-input" style="margin-top:-17px">Endereço</label>
+                            <span class="help-block">Digite no minimo 5 letras...</span>
+                        </div>
+
+
+                        <div class="form-group form-md-line-input form-md-floating-label ui-float-label">
+                            <p-dropdown name="listarSexo" [options]="sexos" id="Selecione o sexo" [style]="{width: '215px'}" [(ngModel)]="aluno.sexo.id"
+                            placeholder="Selecione um Sexo" [autoWidth]="false" ngModel ></p-dropdown>
+                        </div>
+
+
+                    </div>
+
+                    <div class="ui-g-6 ui-fluid">
+
+                        <div class="form-group form-md-line-input form-md-floating-label ui-float-label">
+                            <input type="text" class="form-control" id="form_control_1"
+                            [(ngModel)]="aluno.email" name="email" ngModel>
+                            <label for="float-input" style="margin-top:-17px">Email</label>
+                            <span class="help-block">Some help goes here...</span>
+                        </div>
+
+
+                        <div class="form-group form-md-line-input form-md-floating-label ui-float-label">
+                            <input type="text" class="form-control" id="form_control_1" required minlength="5"
+                            [(ngModel)]="aluno.telefone" name="telefone" ngModel>
+                            <label for="float-input" style="margin-top:-17px">Telefone</label>
+                            <span class="help-block">Digite no minimo 5 letras...</span>
+                        </div>
+
+                        <div class="form-group form-md-line-input form-md-floating-label ui-float-label">
+
+
+                          <p-dropdown name="listarProfessor" [options]="professores" id="Selecione um Professor" [style]="{width: '215px'}" [(ngModel)]="aluno.professor.id"
+                          placeholder="Selecione um Professor" [autoWidth]="false" ngModel ></p-dropdown>
+
+
+
+                      </div>
+
+
+                    </div>
+
+                  </div>
+
+                </div>
+              </p-card>
+
+
+
+
+
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </form>
