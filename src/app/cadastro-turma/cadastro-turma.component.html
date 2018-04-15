@@ -1,0 +1,57 @@
+<form #f="ngForm" autocomplete="off" (ngSubmit)="salvar(f)">
+  <h1 class="page-title">
+    <i class="icon-user"></i>
+    <span style="margin-left:5px">Nome do Aluno: {{turma.nome}} </span>
+    <small></small>
+  </h1>
+
+<div class="row">
+
+    <div class="col-lg-12 col-xs-6 col-sm-3">
+            <div class="portlet light ">
+                  <div class="portlet-title">
+                    <div class="caption"></div>
+                      <div class="actions">
+                          <button type="submit" class="btn btn-circle green btn-outline btn-sm">
+
+                            <i class="fa fa-plus"></i> Salvar
+
+                          </button>
+                          <a class="btn btn-circle btn-icon-only btn-default" routerLink="/alunos">
+                            <i class="icon-magnifier"></i>
+                          </a>
+
+                           <a class="btn btn-circle btn-icon-only btn-default fullscreen" href="#"> </a>
+                    </div>
+                  </div>
+                  <div class="portlet-body">
+                    <div class="row">
+                      <p-card>
+
+                        <div class="ui-g">
+
+                          <div class="ui-g-12">
+                            <div class="ui-g-6 ui-fluid">
+
+                              <div class="form-group form-md-line-input form-md-floating-label ui-float-label">
+                                    <input type="text" class="form-control" id="form_control_1"
+                                    [(ngModel)]="turma.nome" name="nome" ngModel>
+                                    <label for="float-input">Nome da Turma</label>
+                                    <span class="help-block">Digite no minimo 10 letras...</span>
+                              </div>
+
+                            </div>
+
+                          </div>
+
+                        </div>
+
+                      </p-card>
+                    </div>
+                  </div>
+            </div>
+    </div>
+
+  </div>
+
+</form>

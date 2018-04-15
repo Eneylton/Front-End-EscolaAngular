@@ -1,3 +1,7 @@
+import { PesquisaTurmaModule } from './../pesquisa-turma/pesquisa-turma.module';
+import { PesquisaTurmaComponent } from './../pesquisa-turma/pesquisa-turma/pesquisa-turma.component';
+import { CadastroTurmaModule } from './../cadastro-turma/cadastro-turma.module';
+import { CadastroTurmaComponent } from './../cadastro-turma/cadastro-turma.component';
 import { HttpModule } from '@angular/http';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
@@ -22,14 +26,22 @@ import { AppRoutingModule } from '../app-routing.module';
     CommonModule,
     CadastroAlunoModule,
     PesquisaAlunoModule,
+    PesquisaTurmaModule,
     PrincipalModule,
+    CadastroTurmaModule,
     CoreModule,
     HttpModule,
     AppRoutingModule
 
   ],
   declarations: [TopoComponent, MenuComponent, ConteudoComponent, FooterComponent],
-  exports:[TopoComponent,MenuComponent,ConteudoComponent,
-           FooterComponent, CadastroAlunoComponent,PesquisaAlunoComponent,PrincipalComponent]
+  exports:[TopoComponent,
+           MenuComponent,
+           ConteudoComponent,
+           FooterComponent,
+           CadastroAlunoComponent,
+           PesquisaAlunoComponent,
+           PrincipalComponent,
+           PesquisaTurmaComponent]
 })
 export class LayoutModule { }

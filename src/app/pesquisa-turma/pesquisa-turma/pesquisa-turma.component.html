@@ -1,6 +1,6 @@
 <h1 class="page-title">
   <i class="icon-user"></i>
-  <span style="margin-left:5px"> Controle de Alunos </span>
+  <span style="margin-left:5px"> Controle de turmas </span>
   <small></small>
 </h1>
 
@@ -11,11 +11,11 @@
     <div class="portlet light ">
       <div class="portlet-title">
         <div class="caption">
-          <span class="caption-subject bold uppercase font-dark">Lista de alunos</span>
+          <span class="caption-subject bold uppercase font-dark">Lista de turmas</span>
           <span class="caption-helper">Últimos cadastrados...</span>
         </div>
         <div class="actions">
-          <a class="btn btn-circle blue btn-outline btn-sm" routerLink="/alunos/novo">
+          <a class="btn btn-circle blue btn-outline btn-sm" routerLink="/turmas/novo">
             <i class="icon-plus"></i>
             Novo
           </a>
@@ -38,25 +38,23 @@
             </div>
           </form>
 
-          <p-dataTable [value]="alunos" [paginator]="true" [rows]="filtro.itensPorPagina" [lazy]="true" [totalRecords]="totalRegistros"
-            (onLazyLoad)="aoMudarPagina($event)" [responsive]="true" [globalFilter]="gb" [rowsPerPageOptions]="[7,14,21]" emptyMessage="Nenhuma Aluno encontrado...."
+          <p-dataTable [value]="turmas" [paginator]="true" [rows]="filtro.itensPorPagina" [lazy]="true" [totalRecords]="totalRegistros"
+            (onLazyLoad)="aoMudarPagina($event)" [responsive]="true" [globalFilter]="gb" [rowsPerPageOptions]="[7,14,21]" emptyMessage="Nenhuma turma encontrado...."
             #tabela>
 
             <p-column field="id" header="Código" styleClass="col-id"></p-column>
             <p-column field="nome" header="Nome" [filterField]="true"></p-column>
-            <p-column field="endereco" header="Endereço"></p-column>
-            <p-column field="telefone" header="Telefone" styleClass="col-tel"></p-column>
-            <p-column field="sexo.descricao" header="Sexo"></p-column>
+
 
 
             <p-column styleClass="col-acoes" header="Ações">
-              <ng-template let-aluno="rowData" pTemplate="body">
+              <ng-template let-turma="rowData" pTemplate="body">
 
-                <button pButton icon="fa-user" pTooltip="Editar" class="ui-button-warning" tooltipPosition="top" [routerLink]="['/turmas', aluno.id]"></button>
+                <button pButton icon="fa-user" pTooltip="Editar" class="ui-button-warning" tooltipPosition="top" [routerLink]="['/turmas', turma.id]"></button>
 
-                <button pButton icon="fa-pencil" pTooltip="Editar" class="ui-button-info" tooltipPosition="top" [routerLink]="['/alunos', aluno.id]"></button>
+                <button pButton icon="fa-pencil" pTooltip="Editar" class="ui-button-info" tooltipPosition="top" [routerLink]="['/turmas', turma.id]"></button>
 
-                <button pButton icon="fa-trash" pTooltip="Excluir" class="ui-button-primary" tooltipPosition="top" (click)="confirmarExclusao(aluno.id)"></button>
+                <button pButton icon="fa-trash" pTooltip="Excluir" class="ui-button-primary" tooltipPosition="top" (click)="confirmarExclusao(turma.id)"></button>
               </ng-template>
 
 

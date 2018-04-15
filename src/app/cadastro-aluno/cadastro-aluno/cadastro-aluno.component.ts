@@ -37,6 +37,8 @@ export class CadastroAlunoComponent implements OnInit {
 
     const codigoAluno = this.route.snapshot.params['codigo'];
 
+
+
     if (codigoAluno) {
       this.carregarAluno(codigoAluno);
       this.carregarSexos();
